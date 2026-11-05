@@ -1,19 +1,16 @@
 import AboutContent from './content/AboutContent';
-import ProjectsContent from './content/ProjectsContent';
 import ExperienceContent from './content/ExperienceContent';
 import SkillsContent from './content/SkillsContent';
 import { type FolderId } from '../../content';
 
 interface IContentRendererProps {
-    id: FolderId,
-};
+  id: FolderId;
+}
 
 const ContentRenderer = ({ id }: IContentRendererProps) => {
   switch (id) {
     case 'about':
-      return <AboutContent/>;
-    case 'projects':
-      return <ProjectsContent />;
+      return <AboutContent />;
     case 'experience':
       return <ExperienceContent />;
     case 'skills':

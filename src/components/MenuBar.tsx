@@ -1,20 +1,15 @@
-import { useEffect, useState } from 'react'
-import {
-  BatteryIcon,
-  ControlCenterIcon,
-  SearchIcon,
-  WifiIcon,
-} from './icons'
+import { useEffect, useState } from 'react';
+import { BatteryIcon, ControlCenterIcon, SearchIcon, WifiIcon } from './icons';
 
-const menus = ['Ilija Milisav', 'Software Engineer']
+const menus = ['Ilija Milisav', 'Software Engineer'];
 
 export const MenuBar = () => {
-  const [now, setNow] = useState(() => new Date())
+  const [now, setNow] = useState(() => new Date());
 
   useEffect(() => {
-    const id = window.setInterval(() => setNow(new Date()), 1000)
-    return () => window.clearInterval(id)
-  }, [])
+    const id = window.setInterval(() => setNow(new Date()), 1000);
+    return () => window.clearInterval(id);
+  }, []);
 
   const time = new Intl.DateTimeFormat(undefined, {
     weekday: 'short',
@@ -22,7 +17,7 @@ export const MenuBar = () => {
     day: 'numeric',
     hour: 'numeric',
     minute: '2-digit',
-  }).format(now)
+  }).format(now);
 
   return (
     <header className="menubar">
@@ -41,5 +36,5 @@ export const MenuBar = () => {
         <time dateTime={now.toISOString()}>{time}</time>
       </div>
     </header>
-  )
-}
+  );
+};

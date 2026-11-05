@@ -1,5 +1,6 @@
 :root {
-  --sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display',
+  --sans:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display',
     'Helvetica Neue', Helvetica, Arial, sans-serif;
   --menubar-h: 28px;
   --dock-bottom: 10px;

@@ -3,7 +3,7 @@
   width: 100vw;
   height: 100svh;
   overflow: hidden;
-  background-image: url("/bg.png");
+  background-image: url('/bg.png');
   background-size: cover;
 }
 
@@ -58,10 +58,6 @@
   white-space: nowrap;
 }
 
-/* .menubar-item.is-bold {
-  font-weight: 800;
-} */
-
 .menubar-right time {
   font-variant-numeric: tabular-nums;
 }
@@ -115,6 +111,10 @@
 .desktop-folder.is-selected .desktop-folder-name {
   background: rgba(10, 132, 255, 0.92);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.black-text {
+  color: #000;
 }
 
 .finder-window {
@@ -277,8 +277,7 @@
   width: 72px;
   height: 88px;
   border-radius: 6px;
-  background:
-    linear-gradient(180deg, #fff 0%, #f2f2f7 100%);
+  background: linear-gradient(180deg, #fff 0%, #f2f2f7 100%);
   box-shadow:
     0 1px 0 rgba(0, 0, 0, 0.06),
     0 8px 16px rgba(0, 0, 0, 0.08);
@@ -315,8 +314,8 @@
 }
 
 .skill-chips li {
-  padding: 8px 12px;
-  border-radius: 999px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.08);
   font-size: 13px;

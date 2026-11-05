@@ -1,26 +1,26 @@
-import { useEffect, useRef, type PointerEvent, type ReactNode } from 'react'
-import type { FolderId } from '../../content'
+import { useEffect, useRef, type PointerEvent, type ReactNode } from 'react';
+import type { FolderId } from '../../content';
 
 export type WindowState = {
-  id: FolderId
-  x: number
-  y: number
-  width: number
-  height: number
-  z: number
-  maximized: boolean
-  origin: { x: number; y: number }
-}
+  id: FolderId;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  z: number;
+  maximized: boolean;
+  origin: { x: number; y: number };
+};
 
 type WindowProps = {
-  win: WindowState
-  title: string
-  children: ReactNode
-  onClose: (id: FolderId) => void
-  onFocus: (id: FolderId) => void
-  onMove: (id: FolderId, x: number, y: number) => void
-  onToggleMaximize: (id: FolderId) => void
-}
+  win: WindowState;
+  title: string;
+  children: ReactNode;
+  onClose: (id: FolderId) => void;
+  onFocus: (id: FolderId) => void;
+  onMove: (id: FolderId, x: number, y: number) => void;
+  onToggleMaximize: (id: FolderId) => void;
+};
 
 export const Window = ({
   win,
@@ -32,45 +32,45 @@ export const Window = ({
   onToggleMaximize,
 }: WindowProps) => {
   const drag = useRef<{
-    pointerId: number
-    offsetX: number
-    offsetY: number
-  } | null>(null)
+    pointerId: number;
+    offsetX: number;
+    offsetY: number;
+  } | null>(null);
 
   useEffect(() => {
     return () => {
-      drag.current = null
-    }
-  }, [])
+      drag.current = null;
+    };
+  }, []);
 
   const startDrag = (event: PointerEvent<HTMLDivElement>) => {
-    if (win.maximized) return
-    if ((event.target as HTMLElement).closest('button')) return
-    onFocus(win.id)
+    if (win.maximized) return;
+    if ((event.target as HTMLElement).closest('button')) return;
+    onFocus(win.id);
     drag.current = {
       pointerId: event.pointerId,
       offsetX: event.clientX - win.x,
       offsetY: event.clientY - win.y,
-    }
-    event.currentTarget.setPointerCapture(event.pointerId)
-  }
+    };
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
 
   const moveDrag = (event: PointerEvent<HTMLDivElement>) => {
-    if (!drag.current || drag.current.pointerId !== event.pointerId) return
+    if (!drag.current || drag.current.pointerId !== event.pointerId) return;
     onMove(
       win.id,
       event.clientX - drag.current.offsetX,
-      event.clientY - drag.current.offsetY,
-    )
-  }
+      event.clientY - drag.current.offsetY
+    );
+  };
 
   const endDrag = (event: PointerEvent<HTMLDivElement>) => {
-    if (!drag.current || drag.current.pointerId !== event.pointerId) return
-    drag.current = null
+    if (!drag.current || drag.current.pointerId !== event.pointerId) return;
+    drag.current = null;
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-      event.currentTarget.releasePointerCapture(event.pointerId)
+      event.currentTarget.releasePointerCapture(event.pointerId);
     }
-  }
+  };
 
   const style = win.maximized
     ? {
@@ -90,7 +90,7 @@ export const Window = ({
         zIndex: win.z,
         ['--origin-x' as string]: `${win.origin.x}px`,
         ['--origin-y' as string]: `${win.origin.y}px`,
-      }
+      };
 
   return (
     <section
@@ -137,5 +137,5 @@ export const Window = ({
       </div>
       <div className="finder-body">{children}</div>
     </section>
-  )
-}
+  );
+};

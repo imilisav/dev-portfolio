@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { GithubIcon, LinkedinIcon } from './icons'
-import { dockLinks } from '../content'
+import { useState } from 'react';
+import { GithubIcon, LinkedinIcon } from './icons';
+import { dockLinks } from '../content';
 
 const dockItems = [
   {
@@ -15,10 +15,10 @@ const dockItems = [
     href: dockLinks.linkedin,
     Icon: LinkedinIcon,
   },
-] as const
+] as const;
 
 export const Dock = () => {
-  const [bouncing, setBouncing] = useState<string | null>(null)
+  const [bouncing, setBouncing] = useState<string | null>(null);
 
   return (
     <nav className="dock" aria-label="Dock">
@@ -29,8 +29,8 @@ export const Dock = () => {
           href={href}
           aria-label={label}
           onClick={() => {
-            setBouncing(id)
-            window.setTimeout(() => setBouncing(null), 700)
+            setBouncing(id);
+            window.setTimeout(() => setBouncing(null), 700);
           }}
           onAnimationEnd={() => setBouncing(null)}
         >
@@ -39,5 +39,5 @@ export const Dock = () => {
         </a>
       ))}
     </nav>
-  )
-}
+  );
+};

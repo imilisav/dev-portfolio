@@ -1,43 +1,43 @@
-import { useId } from 'react'
+import { useId } from 'react';
 
 type IconProps = {
-  className?: string
-}
+  className?: string;
+};
 
 export const FolderIcon = ({ className }: IconProps) => {
-  const uid = useId().replace(/:/g, '')
-  const tab = `${uid}-tab`
-  const body = `${uid}-body`
+  const uid = useId().replace(/:/g, '');
+  const tab = `${uid}-tab`;
+  const body = `${uid}-body`;
 
   return (
-  <svg className={className} viewBox="0 0 64 52" aria-hidden="true">
-    <defs>
-      <linearGradient id={tab} x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stopColor="#6ec2ff" />
-        <stop offset="1" stopColor="#3aa0ef" />
-      </linearGradient>
-      <linearGradient id={body} x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stopColor="#5bbcff" />
-        <stop offset="0.45" stopColor="#2f9aee" />
-        <stop offset="1" stopColor="#1b7fd4" />
-      </linearGradient>
-    </defs>
-    <path
-      fill={`url(#${tab})`}
-      d="M4 10c0-2.2 1.8-4 4-4h14.2c1.2 0 2.3.5 3.1 1.4l3.4 3.6c.4.4.9.7 1.5.7H56c2.2 0 4 1.8 4 4v2H4v-7.7Z"
-    />
-    <path
-      fill={`url(#${body})`}
-      d="M4 16.5C4 14 6 12 8.5 12h47C58 12 60 14 60 16.5v27c0 3.6-2.9 6.5-6.5 6.5h-43C6.9 50 4 47.1 4 43.5v-27Z"
-    />
-    <path
-      fill="#8fd4ff"
-      opacity="0.35"
-      d="M8 16h48c1.1 0 2 .9 2 2v4H6v-4c0-1.1.9-2 2-2Z"
-    />
-  </svg>
-  )
-}
+    <svg className={className} viewBox="0 0 64 52" aria-hidden="true">
+      <defs>
+        <linearGradient id={tab} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#6ec2ff" />
+          <stop offset="1" stopColor="#3aa0ef" />
+        </linearGradient>
+        <linearGradient id={body} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#5bbcff" />
+          <stop offset="0.45" stopColor="#2f9aee" />
+          <stop offset="1" stopColor="#1b7fd4" />
+        </linearGradient>
+      </defs>
+      <path
+        fill={`url(#${tab})`}
+        d="M4 10c0-2.2 1.8-4 4-4h14.2c1.2 0 2.3.5 3.1 1.4l3.4 3.6c.4.4.9.7 1.5.7H56c2.2 0 4 1.8 4 4v2H4v-7.7Z"
+      />
+      <path
+        fill={`url(#${body})`}
+        d="M4 16.5C4 14 6 12 8.5 12h47C58 12 60 14 60 16.5v27c0 3.6-2.9 6.5-6.5 6.5h-43C6.9 50 4 47.1 4 43.5v-27Z"
+      />
+      <path
+        fill="#8fd4ff"
+        opacity="0.35"
+        d="M8 16h48c1.1 0 2 .9 2 2v4H6v-4c0-1.1.9-2 2-2Z"
+      />
+    </svg>
+  );
+};
 
 export const GithubIcon = ({ className }: IconProps) => (
   <svg className={className} viewBox="0 0 64 64" aria-hidden="true">
@@ -48,7 +48,7 @@ export const GithubIcon = ({ className }: IconProps) => (
       transform="translate(8 8) scale(2)"
     />
   </svg>
-)
+);
 
 export const LinkedinIcon = ({ className }: IconProps) => (
   <svg className={className} viewBox="0 0 64 64" aria-hidden="true">
@@ -65,7 +65,7 @@ export const LinkedinIcon = ({ className }: IconProps) => (
       in
     </text>
   </svg>
-)
+);
 
 export const WifiIcon = ({ className }: IconProps) => (
   <svg className={className} viewBox="0 0 16 16" aria-hidden="true">
@@ -74,7 +74,7 @@ export const WifiIcon = ({ className }: IconProps) => (
       d="M8 13.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Zm4.1-3.3a5.8 5.8 0 0 0-8.2 0l1.1 1.1a4.3 4.3 0 0 1 6 0l1.1-1.1Zm2.4-2.4a9.2 9.2 0 0 0-13 0l1.1 1.1a7.6 7.6 0 0 1 10.8 0l1.1-1.1Z"
     />
   </svg>
-)
+);
 
 export const BatteryIcon = ({ className }: IconProps) => (
   <svg className={className} viewBox="0 0 25 12" aria-hidden="true">
@@ -89,9 +89,12 @@ export const BatteryIcon = ({ className }: IconProps) => (
       strokeWidth="1.2"
     />
     <rect x="2.2" y="2.8" width="16" height="6.4" rx="1" fill="currentColor" />
-    <path d="M23.2 4.2h.8c.6 0 1 .4 1 1v1.6c0 .6-.4 1-1 1h-.8V4.2Z" fill="currentColor" />
+    <path
+      d="M23.2 4.2h.8c.6 0 1 .4 1 1v1.6c0 .6-.4 1-1 1h-.8V4.2Z"
+      fill="currentColor"
+    />
   </svg>
-)
+);
 
 export const SearchIcon = ({ className }: IconProps) => (
   <svg className={className} viewBox="0 0 16 16" aria-hidden="true">
@@ -100,13 +103,20 @@ export const SearchIcon = ({ className }: IconProps) => (
       d="M6.7 1.8a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 1.5a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8Zm5.3 7.2 2.3 2.3-.9.9-2.3-2.3.9-.9Z"
     />
   </svg>
-)
+);
 
 export const ControlCenterIcon = ({ className }: IconProps) => (
   <svg className={className} viewBox="0 0 16 16" aria-hidden="true">
-    <rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1.4" fill="currentColor" />
+    <rect
+      x="1.5"
+      y="1.5"
+      width="5.5"
+      height="5.5"
+      rx="1.4"
+      fill="currentColor"
+    />
     <rect x="9" y="1.5" width="5.5" height="5.5" rx="1.4" fill="currentColor" />
     <rect x="1.5" y="9" width="5.5" height="5.5" rx="1.4" fill="currentColor" />
     <rect x="9" y="9" width="5.5" height="5.5" rx="1.4" fill="currentColor" />
   </svg>
-)
+);
